@@ -1,4 +1,4 @@
-Script to convert test file TXT to CSV file
+Script to convert TXT file to CSV file
     import pandas as pd
 
     # reading given csv file and creating dataframe
