@@ -1,0 +1,30 @@
+Monitoring multiple website using Python
+        import requests
+        import panadas as pd 
+
+        df = pd.read_excel("C:\\website data\\website.xlsx")
+        print (df)   -> show list of index (0,1,2..) and website ( http://...., http://...)to monitor 
+    
+    To navigate (iterate) through these website, we use for loop
+        import requests
+        import panadas as pd 
+        df = pd.read_excel("C:\\website data\\website.xlsx")
+        for index, website in df.iterrows():
+            print (index, websites["Name"])  -> show index and websites_name in COLUMN
+            response = requests.get(websites["Name"])
+            print (response.status_code)  -> the 3 first print 200 and the last 2 print error message
+
+    if error message isnt store in http status codes
+        import requests
+        import panadas as pd 
+
+        df = pd.read_excel("C:\\website data\\website.xlsx")
+        
+        for index, website in df.iterrows():
+            print (index, websites["Name"])
+
+            try:
+                response = requests.get(websites["Name"])
+                print(response.status_code)
+            except:
+                print ("website {} is not available".format(websites["Name"])) 
