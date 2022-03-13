@@ -1,0 +1,11 @@
+Script to find and replace 
+    # Read in the file
+    with open('file.txt', 'r') as file :
+        filedata = file.read()
+
+    # Replace the target storing
+    filedata = filedata.replace('man', 'woman')
+
+    # write the file out again
+    with open('file.txt', 'w') as file:
+    file.write(filedata)
